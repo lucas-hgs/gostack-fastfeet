@@ -6,7 +6,11 @@ import RecipientController from './app/controllers/RecipientController';
 
 import authMiddleware from './app/middlewares/auth';
 
+import multerConfig from './config/multer';
+
 const routes = new Router();
+
+const upload = multer(multerConfig);
 
 routes.post('/users', UserController.store);
 routes.post('/sessions', SessionController.store);
