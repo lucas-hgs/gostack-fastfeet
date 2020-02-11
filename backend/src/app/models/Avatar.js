@@ -6,6 +6,12 @@ class Avatar extends Model {
       {
         name: Sequelize.STRING,
         path: Sequelize.STRING,
+        url: {
+          type: Sequelize.VIRTUAL,
+          get() {
+            return `http://localhost:3333/avatars/${this.path}`;
+          },
+        },
       },
       {
         sequelize,
