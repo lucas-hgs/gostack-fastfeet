@@ -7,6 +7,7 @@ import SessionController from './app/controllers/SessionController';
 import RecipientController from './app/controllers/RecipientController';
 import AvatarController from './app/controllers/AvatarController';
 import DeliverymanController from './app/controllers/DeliverymanController';
+import SignatureController from './app/controllers/SignatureController';
 
 import authMiddleware from './app/middlewares/auth';
 
@@ -32,5 +33,7 @@ routes.post('/deliverymen', DeliverymanController.store);
 routes.get('/deliverymen', DeliverymanController.index);
 routes.put('/deliverymen/:id', DeliverymanController.update);
 routes.delete('/deliverymen/:id', DeliverymanController.delete);
+
+routes.post('/signatures', upload.single('file'), SignatureController.store);
 
 export default routes;
