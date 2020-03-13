@@ -6,10 +6,19 @@ import Avatar from '../app/models/Avatar';
 import Deliveryman from '../app/models/Deliveryman';
 import Signature from '../app/models/Signature';
 import Order from '../app/models/Order';
+import Problem from '../app/models/Problem';
 
 import databaseConfig from '../config/database';
 
-const models = [User, Recipient, Avatar, Deliveryman, Signature, Order];
+const models = [
+  User,
+  Recipient,
+  Avatar,
+  Deliveryman,
+  Signature,
+  Order,
+  Problem,
+];
 
 class Database {
   constructor() {

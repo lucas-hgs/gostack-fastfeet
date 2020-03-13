@@ -10,6 +10,7 @@ import DeliverymanController from './app/controllers/DeliverymanController';
 import SignatureController from './app/controllers/SignatureController';
 import OrderController from './app/controllers/OrderController';
 import DeliveryController from './app/controllers/DeliveryController';
+import ProblemController from './app/controllers/ProblemController';
 
 import authMiddleware from './app/middlewares/auth';
 
@@ -23,6 +24,9 @@ routes.post('/sessions', SessionController.store);
 routes.get('/deliveryman/:id/deliveries', DeliveryController.index);
 routes.put('/deliveries/:id', DeliveryController.withdraw);
 routes.put('/end-delivery/:id', DeliveryController.delivery);
+
+routes.get('/delivery/:id/problems', ProblemController.index);
+routes.post('/delivery/:id/problems', ProblemController.store);
 
 routes.use(authMiddleware);
 
@@ -46,5 +50,7 @@ routes.get('/orders', OrderController.index);
 routes.post('/orders', OrderController.store);
 routes.put('/orders/:id', OrderController.update);
 routes.delete('/orders/:id', OrderController.delete);
+
+routes.put('/delivery/:id/cancel-delivery', ProblemController.update);
 
 export default routes;
