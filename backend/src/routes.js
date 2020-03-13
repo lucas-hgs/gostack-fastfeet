@@ -21,6 +21,8 @@ routes.post('/users', UserController.store);
 routes.post('/sessions', SessionController.store);
 
 routes.get('/deliveryman/:id/deliveries', DeliveryController.index);
+routes.put('/deliveries/:id', DeliveryController.withdraw);
+routes.put('/end-delivery/:id', DeliveryController.delivery);
 
 routes.use(authMiddleware);
 
